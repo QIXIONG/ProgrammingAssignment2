@@ -7,10 +7,10 @@
 ## Form a function list to set and get the matrix and its inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-        inv <- matrix(,nrow = nrow(x), ncol = ncol(x))
+        inv <- NULL
         set <- function(y = matrix()) {
                 x<<-y
-                inv <<- matrix(NULL,nrow = nrow(x), ncol = ncol(x))
+                inv <<- NULL
         }
         get <- function() x
         setinverse <- function(inverse) inv <<- inverse
@@ -32,4 +32,5 @@ cacheSolve <- function(x, ...) {
         }
         data <- x$get()
         inv <- solve(data)
+        inv
 }
